@@ -49,7 +49,7 @@ All functions sould have test coverage. Tests are written using
 
 Run `make test` to run them all.
 
-I've performed some ad-hoc testing on the real device I have convienient, an
+I've performed some ad-hoc testing on the real device I have convenient, an
 Epson TM-T20.
 
 ## Building
