@@ -74,7 +74,7 @@ escpos_text_size() {
     w=$(($1 - 1))
     h=$(($2 - 1))
   fi
-  local value=$((16 * $w + $h))
+  local value=$((16 * w + h))
   printf "%s" "${ESCPOS_GS}!"
   _escpos_chr "$value"
 }

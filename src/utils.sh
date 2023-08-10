@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-ESCPOS_LF=$'\n'
 ESCPOS_ESC=$'\x1B'
 ESCPOS_GS=$'\x1D'
 
 _escpos_chr() {
   [ "$1" -lt 256 ] || return 1
+  # shellcheck disable=SC2059
   printf "\\$(printf '%03o' "$1")"
 }
 
