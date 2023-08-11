@@ -1,11 +1,16 @@
-.PHONY: check test
+.PHONY: check clean test
 
-escpos.sh: src/*.sh
+SH_FILES = $(shell find src -name "*.sh" | sort)
+
+escpos.sh: $(SH_FILES)
 	echo "#!/usr/bin/env bash" > escpos.sh
-	cat src/*.sh | sed '/^#!/d' >> escpos.sh
+	cat $(SH_FILES) | sed '/^#!/d' >> escpos.sh
 
 check: escpos.sh
 	shellcheck escpos.sh
 
+clean:
+	rm escpos.sh
+
 test:
-	./test/bats/bin/bats test
+	./test/bats/bin/bats test/2d_commands test
