@@ -30,3 +30,24 @@ _escpos_boolean() {
   printf "%s" "$prefix"
   _escpos_chr "$on"
 }
+
+_escpos_usage() {
+  local help=0
+  local msg="$1"
+  shift
+  while [[ $# -gt 0 ]] && [[ $1 == -* ]]; do
+    case "$1" in
+    -h)     help=1; break;;
+    --help) help=1; break;;
+    --)
+      return 0;;
+    *) ;;
+    esac
+    shift
+  done
+
+  if [ "$help" -eq 1 ]; then
+    echo "$msg" 1>&2
+    return 1
+  fi
+}
