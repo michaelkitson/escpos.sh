@@ -12,7 +12,7 @@ escpos_qr_model() {
     printf "Usage error: unknown flag '%s'" "$1" >&2
     return 1;;
   esac
-  _escpos_2d_header 1 A "$model" 1
+  _escpos_2d_header 1 A $model 1
   _escpos_chr 0
 }
 
@@ -36,7 +36,7 @@ escpos_qr_error_correction() {
     return 1;;
   esac
 
-  _escpos_2d_header 1 E "$level" 0
+  _escpos_2d_header 1 E $level 0
 }
 
 escpos_qr_data() {
