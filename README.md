@@ -1,6 +1,6 @@
 # escpos.sh
 
-A Bash shell ESCPOS library.
+A Bash ESCPOS library.
 
 ## Simple Usage
 
@@ -33,18 +33,22 @@ standard out. Pipe the data directly to your printer.
 
 ## Installation
 
-1. Grab `escpos.sh` from the latest Github release.
+1. Grab
+   [`escpos.sh`](https://github.com/michaelkitson/escpos.sh/releases/latest/download/escpos.sh)
+   from the
+   [latest Github release](https://github.com/michaelkitson/escpos.sh/releases/latest).
 2. Place it anywhere and source it with a absolute/relative path
    (`source ./escpos.sh`) in your script, or place it in your path and source it
    by name alone (`source escpos.sh`).
 
 ## Examples
 
-See the [examples directory](./examples)
+See the [examples directory](./examples). Pipe stdout from the example into your
+printer, like `./examples/epson.sh | nc 10.0.0.2 9100`
 
 ## Testing
 
-All functions sould have test coverage. Tests are written using
+All functions should have test coverage. Tests are written using
 [bats](https://github.com/bats-core/bats-core).
 
 Run `make test` to run them all.

@@ -7,5 +7,5 @@ escpos.sh: src/*.sh
 check: escpos.sh
 	shellcheck escpos.sh
 
-test: escpos.sh
+test:
 	./test/bats/bin/bats test
