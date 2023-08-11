@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+ESCPOS_VERSION="0.1.0"
 ESCPOS_ESC=$'\x1B'
 ESCPOS_GS=$'\x1D'
 
@@ -39,7 +40,7 @@ _escpos_boolean() {
       shift # eat the -- before breaking away
       break;;
     *)
-      printf "Usage error: unknown flag '%s'" "$1" >&2
+      printf "Usage error: unknown flag '%s'\n" "$1" >&2
       return 1;;
     esac
     shift
@@ -68,4 +69,10 @@ _escpos_usage() {
     echo "$msg" 1>&2
     return 1
   fi
+}
+
+_escpos_help() {
+  for fn in $(compgen -A function | grep "^escpos_"); do
+    $fn -h
+  done
 }

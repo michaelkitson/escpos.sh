@@ -13,7 +13,7 @@ escpos_feed() {
       shift # eat the -- before breaking away
       break;;
     *)
-      printf "Usage error: unknown flag '%s'" "$1" >&2
+      printf "Usage error: unknown flag '%s'\n" "$1" >&2
       return 1;;
     esac
     shift

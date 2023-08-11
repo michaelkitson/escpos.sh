@@ -15,7 +15,7 @@ escpos_barcode_hri_position() {
   --below) position=2;;
   --both)  position=3;;
   *)
-    printf "Usage error: unknown flag '%s'" "$1" >&2
+    printf "Usage error: unknown flag '%s'\n" "$1" >&2
     return 1;;
   esac
 
@@ -39,7 +39,7 @@ escpos_barcode_hri_font() {
   -d) font=3;;
   -e) font=4;;
   *)
-    printf "Usage error: unknown flag '%s'" "$1" >&2
+    printf "Usage error: unknown flag '%s'\n" "$1" >&2
     return 1;;
   esac
 
@@ -98,7 +98,7 @@ escpos_barcode() {
       shift # eat the -- before breaking away
       break;;
     *)
-      printf "Usage error: unknown flag '%s'" "$1" >&2
+      printf "Usage error: unknown flag '%s'\n" "$1" >&2
       return 1;;
     esac
     shift
