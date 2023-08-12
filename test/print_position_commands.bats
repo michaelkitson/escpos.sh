@@ -6,8 +6,8 @@ source "./src/utils.sh"
 source "./src/print_position_commands.sh"
 
 function setup() {
-  load 'test_helper/common_setup'
-  _common_setup
+  load 'test_helper/bats-support/load'
+  load 'test_helper/bats-assert/load'
 }
 
 # TEST justify

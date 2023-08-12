@@ -49,21 +49,3 @@ escpos_qr_print() {
   _escpos_usage "Usage: escpos_qr_print" "$@" || return $?
   _escpos_2d_header 1 Q 0 0
 }
-
-_escpos_2d_header() {
-  local type=$1
-  local fn=$2
-  local m=$3
-  local len=$4
-  printf "%s" "${ESCPOS_GS}(k"
-  _escpos_2d_plph "$len"
-  printf "%s" "${type}${fn}${m}"
-}
-
-_escpos_2d_plph() {
-  local p=$(($1 + 3))
-  local ph=$((p / 256))
-  local pl=$((p % 256))
-  _escpos_chr $pl
-  _escpos_chr $ph
-}
