@@ -45,7 +45,7 @@ escpos_pdf417_error_correction() {
     value="$2"
   fi
   _escpos_2d_header 0 E $mode 1
-  _escpos_chr $value
+  _escpos_chr "$value"
 }
 
 escpos_pdf417_options() {
