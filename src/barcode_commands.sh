@@ -2,6 +2,11 @@
 
 # GS H 
 escpos_barcode_hri_position() {
+  _escpos_usage "Usage: escpos_barcode_hri_position [--none | --above | --below | --both]
+  --none  Turn off barcode HRI printing
+  --above Print HRI above barcodes
+  --below Print HRI below barcodes
+  --both  Print HRI both above and below barcodes" "$@" || return $?
   local position=0
   case "${1:-}" in
   "") ;;
@@ -19,6 +24,12 @@ escpos_barcode_hri_position() {
 
 # GS f
 escpos_barcode_hri_font() {
+  _escpos_usage "Usage: escpos_barcode_hri_font [-a | -b | -c | -d | -e]
+  -a Select font A (default)
+  -b Select font B
+  -c Select font C
+  -d Select font D
+  -e Select font E" "$@" || return $?
   local font=0
   case "${1:-}" in
   "") ;;
@@ -37,6 +48,7 @@ escpos_barcode_hri_font() {
 
 # GS h
 escpos_barcode_height() {
+  _escpos_usage "Usage: escpos_barcode_height <height (1-255)>" "$@" || return $?
   local dots="${1:-162}"
   printf "%s" "${ESCPOS_GS}h"
   _escpos_chr "$dots"
@@ -44,6 +56,7 @@ escpos_barcode_height() {
 
 # GS w
 escpos_barcode_width() {
+  _escpos_usage "Usage: escpos_barcode_width <height (2-6)>" "$@" || return $?
   local units="${1:-3}"
   printf "%s" "${ESCPOS_GS}w"
   _escpos_chr "$units"
@@ -51,6 +64,20 @@ escpos_barcode_width() {
 
 # GS k
 escpos_barcode() {
+  _escpos_usage "Usage: escpos_barcode <TYPE_OPTION> <number/data>
+  --UPC-A
+  --UPC-E
+  --JAN13
+  --EAN13
+  --JAN8
+  --EAN8
+  --CODE39
+  --ITF
+  --CODABAR
+  --NW-7
+  --CODE93
+  --CODE128
+  --GS1-128" "$@" || return $?
   local type="unspecified"
   while [[ $# -gt 0 ]] && [[ $1 == -* ]]; do
     case "$1" in

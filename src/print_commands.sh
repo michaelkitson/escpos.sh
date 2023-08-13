@@ -3,7 +3,7 @@
 escpos_feed() {
   _escpos_usage "Usage: escpos_feed [--lines | --units] <num>
   --lines Use lines as the distance unit (default)
-  --units Use vertical or horizontal motion units"  "$@" || return $?
+  --units Use vertical or horizontal motion units" "$@" || return $?
   local mode="d"
   while [[ $# -gt 0 ]] && [[ $1 == -* ]]; do
     case "$1" in
