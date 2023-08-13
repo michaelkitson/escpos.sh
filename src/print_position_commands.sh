@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 escpos_justify() {
+  _escpos_usage "Usage: escpos_justify [--left | --center | --right>]
+  --left Left align (default)
+  --center Center align
+  --right Right align" "$@" || return $?
   local mode=0
-    # parse options starting with -
   while [[ $# -gt 0 ]] && [[ $1 == -* ]]; do
     case "$1" in
     --left)   mode=0;;
