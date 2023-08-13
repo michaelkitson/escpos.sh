@@ -5,8 +5,11 @@
 # ESC !
 # ESC -
 escpos_underline() {
+  _escpos_usage "Usage: escpos_underline [--off | --single | --double]
+  --off    Turn off all underlining
+  --single Single underlining (default)
+  --double Double underlining" "$@" || return $?
   local underlines=1
-    # parse options starting with -
   while [[ $# -gt 0 ]] && [[ $1 == -* ]]; do
     case "$1" in
     --off)    underlines=0;;
@@ -28,16 +31,28 @@ escpos_underline() {
 
 # ESC E
 escpos_emphasis() {
+  _escpos_usage "Usage: escpos_emphasis [--on | --off>]
+  --on (default)
+  --off" "$@" || return $?
   _escpos_boolean "${ESCPOS_ESC}E" "$@"
 }
 
 # ESC G
 escpos_double_strike() {
+  _escpos_usage "Usage: escpos_double_strike [--on | --off>]
+  --on (default)
+  --off" "$@" || return $?
   _escpos_boolean "${ESCPOS_ESC}G" "$@"
 }
 
 # ESC M
 escpos_font() {
+  _escpos_usage "Usage: escpos_font [-a | -b | -c | -d | -e]
+  -a Select font A (default)
+  -b Select font B
+  -c Select font C
+  -d Select font D
+  -e Select font E" "$@" || return $?
   local font=0
   case "${1:-}" in
   "") ;;
@@ -60,11 +75,15 @@ escpos_font() {
 # ESC t
 # ESC {
 escpos_upside_down() {
+  _escpos_usage "Usage: escpos_upside_down [--on | --off>]
+  --on (default)
+  --off" "$@" || return $?
   _escpos_boolean "${ESCPOS_ESC}{" "$@"
 }
 
 # GS !
 escpos_text_size() {
+  _escpos_usage "Usage: escpos_text_size [<scale (0-7)> | <width_scale (0-7)> <height_scale (0-7)>]" "$@" || return $?
   local w=0
   local h=0
   if [ $# -eq 1 ]; then
@@ -81,10 +100,16 @@ escpos_text_size() {
 
 # GS B
 escpos_reverse_colors() {
+  _escpos_usage "Usage: escpos_reverse_colors [--on | --off>]
+  --on (default)
+  --off" "$@" || return $?
   _escpos_boolean "${ESCPOS_GS}B" "$@"
 }
 
 # GS b
 escpos_smoothing() {
+  _escpos_usage "Usage: escpos_smoothing [--on | --off>]
+  --on (default)
+  --off" "$@" || return $?
   _escpos_boolean "${ESCPOS_GS}b" "$@"
 }

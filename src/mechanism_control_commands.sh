@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 escpos_cut() {
+  _escpos_usage "Usage: escpos_cut [--full | --partial] [<feed_distance_units>]
+  --full    Full cut (default)
+  --partial Partial cut (one point left uncut)" "$@" || return $?
   local mode=0
   local units=0
   while [[ $# -gt 0 ]] && [[ $1 == -* ]]; do

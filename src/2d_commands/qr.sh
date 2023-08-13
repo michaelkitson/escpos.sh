@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
 escpos_qr_model() {
-  _escpos_usage "Usage: escpos_qr_model [-1 | -2 | --micro]" "$@" || return $?
+  _escpos_usage "Usage: escpos_qr_model [-1 | -2 | --micro]
+  -1      Model 1
+  -2      Model 2 (default)
+  --micro Micro QR Code" "$@" || return $?
   local model=2
   case "${1:-}" in
   -1) model=1;;
@@ -23,7 +26,11 @@ escpos_qr_size() {
 }
 
 escpos_qr_error_correction() {
-  _escpos_usage "Usage: escpos_qr_error_correction [--low | --medium | --quartile | --high]" "$@" || return $?
+  _escpos_usage "Usage: escpos_qr_error_correction [--low | --medium | --quartile | --high]
+  --low      Low error correction mode, 7% of data bytes can be restored. (default)
+  --medium   Medium error correction mode, 15% of data bytes can be restored.
+  --quartile Quartile error correction mode, 25% of data bytes can be restored.
+  --high     High error correction mode, 30% of data bytes can be restored." "$@" || return $?
   local level=0
   case "${1:-}" in
   "")    ;;

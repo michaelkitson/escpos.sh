@@ -11,6 +11,15 @@ function setup() {
   load 'test_helper/bats-assert/load'
 }
 
+@test "test usage messages" {
+  for fn in $(compgen -A function | grep "^escpos_"); do
+    run -1 $fn -h
+    assert_output -e "^Usage: $fn"
+    run -1 $fn --help
+    assert_output -e "^Usage: $fn"
+  done
+}
+
 @test "test emphasis" {
   run -0 escpos_emphasis
   assert_output $'\x1BE\x01'
