@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 escpos_pdf417_columns() {
-  _escpos_usage "Usage: escpos_pdf417_columns [--auto | <count (1-30)>]" "$@" || return $?
+  _escpos_usage "Usage: escpos_pdf417_columns [--auto | <count (1-30)>]
+  --auto Auto-select (default)" "$@" || return $?
   local value=0
   if [ $# -gt 0 ] && [ "$1" != "--auto" ]; then
     value="$1"
@@ -13,7 +14,8 @@ escpos_pdf417_columns() {
 }
 
 escpos_pdf417_rows() {
-  _escpos_usage "Usage: escpos_pdf417_rows [--auto | <count (3-90)>]" "$@" || return $?
+  _escpos_usage "Usage: escpos_pdf417_rows [--auto | <count (3-90)>]
+  --auto Auto-select (default)" "$@" || return $?
   local value=0
   if [ $# -gt 0 ] && [ "$1" != "--auto" ]; then
     value="$1"
@@ -35,7 +37,9 @@ escpos_pdf417_height() {
 }
 
 escpos_pdf417_error_correction() {
-  _escpos_usage "Usage: escpos_pdf417_error_correction [--level <n (0-8)> | --ratio <n (1-40)>]" "$@" || return $?
+  _escpos_usage "Usage: escpos_pdf417_error_correction [--level <n (0-8)> | --ratio <n (1-40)>]
+  --level Uses a fixed amount of error correction codewords.
+  --ratio Uses a variable amount of error correction codewords that scales with the data size (default, at 10%)." "$@" || return $?
   local mode=1
   local value=1
   if [ $# -gt 0 ] && [ "$1" == "--level" ]; then
@@ -49,7 +53,9 @@ escpos_pdf417_error_correction() {
 }
 
 escpos_pdf417_options() {
-  _escpos_usage "Usage: escpos_pdf417_options [--normal | --truncated]" "$@" || return $?
+  _escpos_usage "Usage: escpos_pdf417_options [--normal | --truncated]
+  --normal    Standard PDF417 (default)
+  --truncated Truncated PDF417" "$@" || return $?
   local value=0
   case "${1:-}" in
   "") ;;
