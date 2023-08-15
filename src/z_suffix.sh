@@ -3,6 +3,17 @@
 ESCPOS_HELP="escpos.sh $ESCPOS_VERSION -- A Bash ESCPOS library
 To get help with a specific command, run '<command> --help'
 
+Simple Example:
+(
+  source ./escpos.sh
+  escpos_reset
+  escpos_justify --center
+  escpos_text_size 2
+  echo 'A centered line of text'
+  ...
+  escpos_cut
+) > /dev/usb/lp0
+
 Command List:
 escpos_barcode -- Print a barcode.
 escpos_barcode_height -- Set barcode height, in dots.
