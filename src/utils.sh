@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ESCPOS_VERSION="0.1.0"
+ESCPOS_VERSION="0.2.0"
 ESCPOS_ESC=$'\x1B'
 ESCPOS_GS=$'\x1D'
 
