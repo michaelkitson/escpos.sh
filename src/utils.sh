@@ -70,9 +70,3 @@ _escpos_usage() {
     return 1
   fi
 }
-
-_escpos_help() {
-  for fn in $(compgen -A function | grep "^escpos_"); do
-    $fn -h
-  done
-}
