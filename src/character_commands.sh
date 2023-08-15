@@ -19,7 +19,7 @@ escpos_underline() {
       shift # eat the -- before breaking away
       break;;
     *)
-      printf "Usage error: unknown flag '%s'" "$1" >&2
+      printf "Usage error: unknown flag '%s'\n" "$1" >&2
       return 1;;
     esac
     shift
@@ -62,7 +62,7 @@ escpos_font() {
   -d) font=3;;
   -e) font=4;;
   *)
-    printf "Usage error: unknown flag '%s'" "$1" >&2
+    printf "Usage error: unknown flag '%s'\n" "$1" >&2
     return 1;;
   esac
 

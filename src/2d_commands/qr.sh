@@ -12,7 +12,7 @@ escpos_qr_model() {
   -2) ;;
   --micro) model=3;;
   *)
-    printf "Usage error: unknown flag '%s'" "$1" >&2
+    printf "Usage error: unknown flag '%s'\n" "$1" >&2
     return 1;;
   esac
   _escpos_2d_header 1 A $model 1
@@ -39,7 +39,7 @@ escpos_qr_error_correction() {
   --quartile) level=2;;
   --high)     level=3;;
   *)
-    printf "Usage error: unknown flag '%s'" "$1" >&2
+    printf "Usage error: unknown flag '%s'\n" "$1" >&2
     return 1;;
   esac
 
