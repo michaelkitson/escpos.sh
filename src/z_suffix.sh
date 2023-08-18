@@ -47,6 +47,7 @@ escpos_qr_print -- Print the QR data that is currently stored.
 escpos_qr_size -- Set QR size, in dots.
 escpos_reset -- Clear data in the print buffer and reset modes to their defaults.
 escpos_reverse_colors -- Toggle inversed color for printed text (white text, black background).
+escpos_rotate -- Toggle rotated (90deg) text.
 escpos_smoothing -- Set text/font smoothing (ony applies at for text sizes >= 4).
 escpos_text_size -- Set text/font size.
 escpos_underline -- Toggle underlined text.

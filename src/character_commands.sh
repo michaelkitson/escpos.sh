@@ -71,6 +71,12 @@ escpos_font() {
 }
 # ESC R
 # ESC V
+escpos_rotate() {
+  _escpos_usage "Usage: escpos_rotate [--on | --off>]
+  --on (default)
+  --off" "$@" || return $?
+  _escpos_boolean "${ESCPOS_ESC}V" "$@"
+}
 # ESC r
 # ESC t
 # ESC {

@@ -70,6 +70,15 @@ function setup() {
   assert_output '  0x1d, 0x42, 0x00'
 }
 
+@test "test rotate" {
+  run -0 escpos_rotate
+  assert_output $'\x1BV\x01'
+  run -0 escpos_rotate --on
+  assert_output $'\x1BV\x01'
+  run -0 bash -c "$imports escpos_rotate --off | xxd -p"
+  assert_output '1b5600'
+}
+
 @test "test upside down" {
   run -0 escpos_upside_down
   assert_output $'\x1B{\x01'
