@@ -25,6 +25,8 @@ escpos_double_strike -- Toggle text double-strike mode.
 escpos_emphasis -- Toggle bond text.
 escpos_feed -- Feeds paper forward by a number of lines or units.
 escpos_font -- Set text font.
+escpos_graphics_store -- Store a PBM image into the print buffer. Specify a filename or pipe in a PBM bitmap image.
+escpos_graphics_print -- Print the image stored in the print buffer.
 escpos_justify -- Set text alignment.
 escpos_line_spacing -- Set text line spacing, in units.
 escpos_maxicode_data -- Send Maxicode data to store in printer memory.
@@ -45,6 +47,7 @@ escpos_qr_print -- Print the QR data that is currently stored.
 escpos_qr_size -- Set QR size, in dots.
 escpos_reset -- Clear data in the print buffer and reset modes to their defaults.
 escpos_reverse_colors -- Toggle inversed color for printed text (white text, black background).
+escpos_rotate -- Toggle rotated (90deg) text.
 escpos_smoothing -- Set text/font smoothing (ony applies at for text sizes >= 4).
 escpos_text_size -- Set text/font size.
 escpos_underline -- Toggle underlined text.
