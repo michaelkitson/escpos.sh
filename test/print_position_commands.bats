@@ -13,9 +13,9 @@ function setup() {
 
 @test "test usage messages" {
   for fn in $(compgen -A function | grep "^escpos_"); do
-    run -1 $fn -h
+    run -1 "$fn" -h
     assert_output -e "^Usage: $fn"
-    run -1 $fn --help
+    run -1 "$fn" --help
     assert_output -e "^Usage: $fn"
   done
 }

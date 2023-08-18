@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck disable=SC2034
 ESCPOS_VERSION="0.2.0"
 ESCPOS_ESC=$'\x1B'
 ESCPOS_GS=$'\x1D'
