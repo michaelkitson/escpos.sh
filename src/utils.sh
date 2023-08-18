@@ -23,10 +23,19 @@ _escpos_2d_plph() {
   _escpos_chr $ph
 }
 
+_escpos_uint16() {
+  local h=$(($1 / 256)) l=$(($1 % 256))
+  _escpos_chr $l
+  _escpos_chr $h
+}
+
 _escpos_chr() {
-  [ "$1" -lt 256 ] || return 1
-  # shellcheck disable=SC2059
-  printf "\\$(printf '%03o' "$1")"
+  while [ $# -gt 0 ]; do
+    [ "$1" -lt 256 ] || return 1
+    # shellcheck disable=SC2059
+    printf "\\$(printf '%03o' "$1")"
+    shift
+  done
 }
 
 _escpos_boolean() {

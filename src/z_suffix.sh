@@ -25,6 +25,8 @@ escpos_double_strike -- Toggle text double-strike mode.
 escpos_emphasis -- Toggle bond text.
 escpos_feed -- Feeds paper forward by a number of lines or units.
 escpos_font -- Set text font.
+escpos_graphics_store -- Store a PBM image into the print buffer. Specify a filename or pipe in a PBM bitmap image.
+escpos_graphics_print -- Print the image stored in the print buffer.
 escpos_justify -- Set text alignment.
 escpos_line_spacing -- Set text line spacing, in units.
 escpos_maxicode_data -- Send Maxicode data to store in printer memory.
