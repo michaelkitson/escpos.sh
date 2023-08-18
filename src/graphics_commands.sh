@@ -47,7 +47,7 @@ _escpos_p4_parse() {
       continue
     fi
     # otherwise read into field until WS, then handle field.
-    while [ $i -lt ${#header} ] && ! _escpos_isspace "${header:i:1}"; do
+    while [ "$i" -lt ${#header} ] && ! _escpos_isspace "${header:i:1}"; do
       field+="${header:i:1}"
       ((i++))
     done
@@ -59,7 +59,7 @@ _escpos_p4_parse() {
     fi
     ((i++))
   done
-  printf "%s\n" $i
+  printf "%s\n" "$i"
   return 0
 }
 
