@@ -43,6 +43,8 @@ standard out. Pipe the data directly to your printer.
    (`source ./escpos.sh`) in your script, or place it in your path and source it
    by name alone (`source escpos.sh`).
 
+Requirements: Bash (3+), coreutils (really just base64 and tail).
+
 ## Examples
 
 See the [examples directory](./examples). Pipe stdout from the example into your
