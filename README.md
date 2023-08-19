@@ -2,6 +2,8 @@
 
 A Bash ESCPOS library.
 
+![A receipt with a pretty bash logo](./examples/resources/github_example.jpg)
+
 ## Simple Usage
 
 For simplicity, this library is a collection of bash functions that write to
