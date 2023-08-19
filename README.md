@@ -1,5 +1,9 @@
 # escpos.sh
 
+![](https://img.shields.io/github/v/release/michaelkitson/escpos.sh)
+![Zero dependencies](https://img.shields.io/badge/dependencies-none-green)
+![MIT Licensed](https://img.shields.io/badge/license-MIT-green)
+
 A Bash ESCPOS library.
 
 ![A receipt with a pretty bash logo](./examples/resources/github_example.jpg)
